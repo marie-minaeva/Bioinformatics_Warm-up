@@ -31,7 +31,7 @@ Gets a string t and a substring s.
 #### Output :
 An array with positions of the beginning of substring found in the main string.
 #### Description :
-This function is an implementation of Knuth–Morris–Pratt algorithm which searches for occurrences of a "word" s within a main "text string" T by employing the observation that when a mismatch occurs, the word itself embodies sufficient information to determine where the next match could begin, thus bypassing re-examination of previously matched characters.
+This function is an implementation of Knuth–Morris–Pratt algorithm which searches for occurrences of a "word" s within a main "text string" t by employing the observation that when a mismatch occurs, the word itself embodies sufficient information to determine where the next match could begin, thus bypassing re-examination of previously matched characters.
 
 ### Example of working:
 As an input main string the hole genome of E.coli was used. As the input substring a fragment of the genome from the 522 nucleotide was used. The length of substring was 1263 nucleotides.
@@ -42,10 +42,32 @@ For more details consult the Jupyter Notebook
 
 ## Problem #2 - Genome Assembly with Perfect Coverage
 
-### Function: KMP(s,t)
+### Function: wrap_around(genome)
 #### Input : 
-Gets a string t and a substring s.
+Gets a string genome.
 #### Output :
-An array with positions of the beginning of substring found in the main string.
+An array with all the possible linearized variants of a circular chromosome.
 #### Description :
-This function is an implementation of Knuth–Morris–Pratt algorithm which searches for occurrences of a "word" s within a main "text string" T by employing the observation that when a mismatch occurs, the word itself embodies sufficient information to determine where the next match could begin, thus bypassing re-examination of previously matched characters.
+Due to the absence of the beginning and the end of a circular chromosome it can be presented by several linearized versions. This function is created to find out all these variants.
+#### Sample input and output:
+Input: 'ACGTAC'
+Output: ['CGTACA', 'GTACAC', 'TACACG', 'ACACGT', 'CACGTA', 'ACGTAC']
+
+### Function: SymbolToNumber(sym)
+#### Input : 
+Gets a symbol of one of four nucleotides.
+#### Output :
+A number which defines this symbol.
+#### Description :
+As numrers are more familiar for us and especially for the computer it sounds logical to convert each symbol in the number interpretation. In this function 0 stands for A, 1 for C, 2 for G and 3 for T
+
+### Function: PatternToNumber(text)
+#### Input : 
+Gets a string text.
+#### Output :
+An integer that if copding thios text.
+#### Description :
+As numrers are more familiar for us and especially for the computer it sounds logical to convert a string in the number. All strings are sorted lexicographically
+#### Sample input and output:
+Input: 'ACGTAC'
+Output: ['CGTACA', 'GTACAC', 'TACACG', 'ACACGT', 'CACGTA', 'ACGTAC']
