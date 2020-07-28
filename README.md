@@ -37,7 +37,7 @@ This function is an implementation of Knuth–Morris–Pratt algorithm which sea
 As an input main string the hole genome of E.coli was used. As the input substring a fragment of the genome from the 522 nucleotide was used. The length of substring was 1263 nucleotides.
 As an output we've got a single position of the beginning of a substring (522). The running time of both algorithms has been measured: 1min 52s for the brut force algorithm and 2.17 s for the KMP algorithm.
 
-For more details consult the Jupyter Notebook
+For more details consult the Jupyter Notebook.
 
 
 ## Problem #2 - Genome Assembly with Perfect Coverage
@@ -67,7 +67,43 @@ Gets a string text.
 #### Output :
 An integer that if copding thios text.
 #### Description :
-As numrers are more familiar for us and especially for the computer it sounds logical to convert a string in the number. All strings are sorted lexicographically
-#### Sample input and output:
-Input: 'ACGTAC'
-Output: ['CGTACA', 'GTACAC', 'TACACG', 'ACACGT', 'CACGTA', 'ACGTAC']
+As numrers are more familiar for us and especially for the computer it sounds logical to convert a string in the number. All strings are sorted in lexicographical order.
+
+### Function: prefix_suffix(reads)
+#### Input : 
+Gets an array reads of strings.
+#### Output :
+An array of tuples where tuple[0] is a prefix of read i and tuple[1] is a suffix of thi read.
+#### Description :
+This function creates a set of all prefixes and suffixes that are present in the reads.
+
+
+### Function: graf_const(reads)
+#### Input : 
+Gets an array reads of strings.
+#### Output :
+Two arrays nodes and edges where nodes is an array of nodes in de Bruijn graph and edges is a list of edges in de Bruijn graph.
+#### Description :
+This function constructs a de Bruijn graph from a list of reads.
+
+### Function: adj_row(reads)
+#### Input : 
+Gets an array reads of strings.
+#### Output :
+A list of tuples where tuple[0] is a numerical interpretation of a prefix of the read i, tuple[1] is a numerical interpretation of a suffix of the read i, tuple[2] is a prefix of the read i and tuple[3] is a suffix of the read i.
+#### Description :
+This function constructs a kind of an adjacent array of the reads.
+
+### Function: finding(reads)
+#### Input : 
+Gets an array reads of strings.
+#### Output :
+A  string which contains a fully assembled genome.
+#### Description :
+This function gets a list of reads, applies all the functions described above and returns a fully constructed genome.
+
+### Example of working:
+As an input a set of 2000 reads, 50 nucleotides each read, taken from Rosalind was taken.
+As an output we've got an assembled genome that contains 2000 nucleotides. The running time of the algorithm has been measured: it toke 580 ms to construct a genome.
+
+For more details consult the Jupyter Notebook.
