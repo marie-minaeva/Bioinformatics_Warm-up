@@ -244,6 +244,7 @@ A recursive function that splits a list A into to parts and calls quick_sort for
 A function that swaps elementa in the list A and makes it look like that: all the elements that are lower than the pivot element stand to the left from it and all the elements that are higher than the pivot element stand to the right from it. Pivot element is chosen as A[high]
 
 **Example of working:**
+
 As an input a file with an array of 7 elements is used.
 As an output we've got the sorted array. The running time of the algorithm has been measured: it took 1.17 ms to sort an array.
 
