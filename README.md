@@ -19,6 +19,14 @@ In the notebook called Warm_up several functions are realised to solve 5 problem
 
 This function uses a brut force algorithm of searching a substring, that is note efficient in solving real problems of DNA motif finding.
 
+
+**Sample input and output:**
+
+```
+Input: 'GATATATGCATATACTT','ATAT'
+Output: 2 4 10
+```
+
 ### Function: z_func(s)
 
 **Input :** Gets a string for which Z-function will be counted.
@@ -38,6 +46,13 @@ Counts Z-function of string s which will be then used in Knuth–Morris–Pratt 
 **Description :**
 
 This function is an implementation of Knuth–Morris–Pratt algorithm which searches for occurrences of a "word" s within a main "text string" t by employing the observation that when a mismatch occurs, the word itself embodies sufficient information to determine where the next match could begin, thus bypassing re-examination of previously matched characters.
+
+**Sample input and output:**
+
+```
+Input: 'GATATATGCATATACTT','ATAT'
+Output: 2 4 10
+```
 
 **Example of working:**
 
@@ -59,13 +74,6 @@ For more details consult the Jupyter Notebook.
 
 Due to the absence of the beginning and the end of a circular chromosome it can be presented by several linearized versions. This function is created to find out all these variants.
 
-**Sample input and output:**
-
-```
-Input: 'ACGTAC'
-Output: ['CGTACA', 'GTACAC', 'TACACG', 'ACACGT', 'CACGTA', 'ACGTAC']
-```
-
 ### Function: SymbolToNumber(sym)
 
 **Input :** Gets a symbol of one of four nucleotides.
@@ -80,11 +88,11 @@ As numrers are more familiar for us and especially for the computer it sounds lo
 
 **Input :** Gets a string text.
 
-**Output :** An integer that if copding thios text.
+**Output :** An integer that if coding this text.
 
 **Description :**
 
-As numrers are more familiar for us and especially for the computer it sounds logical to convert a string in the number. All strings are sorted in lexicographical order.
+As numbers are more familiar for us and especially for the computer it sounds logical to convert a string in the number. All strings are sorted in lexicographical order.
 
 ### Function: prefix_suffix(reads)
 **Input :** Gets an array reads of strings.
@@ -126,6 +134,13 @@ This function constructs a kind of an adjacent array of the reads.
 
 This function gets a list of reads, applies all the functions described above and returns a fully constructed genome.
 
+**Sample input and output:**
+
+```
+Input: ['ATTAC','TACAG','GATTA', 'ACAGA','CAGAT','TTACA', 'AGATT']
+Output: ACAGATT 
+```
+
 **Example of working:**
 
 As an input a set of 2000 reads is used, 50 nucleotides each read, taken from Rosalind.
@@ -154,6 +169,13 @@ This function constructs a weighted graph from a file.
 **Description :**
 
 This function implements the algorithm of Bellman-Ford that computes shortest paths from a single source vertex to all of the other vertices in a weighted graph.
+
+**Sample input and output:**
+
+```
+Input: [1, 2, 3, 4, 5, 6, 7, 8, 9] [['1', '2', '10\n'], ['3', '2', '1\n'], ['3', '4', '1\n'], ['4', '5', '3\n'], ['5', '6', '-1\n'], ['7', '6', '-1\n'], ['8', '7', '1\n'], ['1', '8', '8\n'], ['7', '2', '-4\n'], ['2', '6', '2\n'], ['6', '3', '-2\n'], ['9', '5', '-10\n'], ['9', '4', '7']]
+Output: 0 5 5 6 9 7 9 8 x 
+```
 
 **Example of working:**
 
@@ -194,6 +216,12 @@ A recursive function that itterates along the graph, visits all the vertexes and
 
 A function that calls function explore for all vertexes in the graph.
 
+**Sample input and output:**
+
+```
+Input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] [['1', '2'], ['1', '5'], ['5', '9'], ['5', '10'], ['9', '10'], ['3', '4'], ['3', '7'], ['3', '8'], ['4', '8'], ['7', '11'], ['8', '11'], ['11', '12'], ['8', '1']]
+Output: 3
+```
 
 ### Function: previsit(v)
 
@@ -233,6 +261,13 @@ The fuction constructs a suitable input for the function quick_sort.
 
 A recursive function that splits a list A into to parts and calls quick_sort for both parts.
 
+**Sample input and output:**
+
+```
+Input: '[5, -2, 4, 7 ,8, -10, 11], 0, 6 '
+Output: -10 -2 4 5 7 8 11 
+```
+
 ### Function: partition(A, low, high)
 
 **Input :** Gets a list A, which contain unsorted array, and an integer low which represents first index of an array A and an integer high which represents last index of an array A.
@@ -241,7 +276,7 @@ A recursive function that splits a list A into to parts and calls quick_sort for
 
 **Description :**
 
-A function that swaps elementa in the list A and makes it look like that: all the elements that are lower than the pivot element stand to the left from it and all the elements that are higher than the pivot element stand to the right from it. Pivot element is chosen as A[high]
+A function that swaps elements in the list A and makes it look like that: all the elements that are lower than the pivot element stand to the left from it and all the elements that are higher than the pivot element stand to the right from it. Pivot element is chosen as A[high]
 
 **Example of working:**
 
