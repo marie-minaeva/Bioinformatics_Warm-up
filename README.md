@@ -103,7 +103,73 @@ A  string which contains a fully assembled genome.
 This function gets a list of reads, applies all the functions described above and returns a fully constructed genome.
 
 ### Example of working:
-As an input a set of 2000 reads, 50 nucleotides each read, taken from Rosalind was taken.
+As an input a set of 2000 reads is used, 50 nucleotides each read, taken from Rosalind.
 As an output we've got an assembled genome that contains 2000 nucleotides. The running time of the algorithm has been measured: it toke 580 ms to construct a genome.
 
 For more details consult the Jupyter Notebook.
+
+## Problem #3: Bellman-Ford Algorithm
+
+### Function: reading_graphs(file)
+#### Input : 
+Gets a string containing the file name.
+#### Output :
+Two lists vert and edges are returned. Vert contains all the nodes of the graph and edges - the edges of the graph with their weights.
+#### Description :
+This function constructs a weighted graph from a file.
+
+### Function: Bellman_Ford(vert,edges,source)
+#### Input : 
+Gets two list vert and edges and an integer source. Vert contains all the vertees of a graph, edges - the edges of a graph and source represents a vertex from which we count all the distances.
+#### Output :
+A list dist is returned. Dist contains all the distances from the vertex source to all other vertexes. If we cannot reach a vertex i from the source one then dist[i]='x'
+#### Description :
+This function implements the algorithm of Bellman-Ford that computes shortest paths from a single source vertex to all of the other vertices in a weighted graph.
+
+### Example of working:
+As an input a file with a graph with 9 vertexes and 13 edges is used. First line contain the number of vertexes and edges of the graph.
+As an output we've got all the distances from the vertex number 1 to all other vertexes. The running time of the algorithm has been measured: it toke 895 𝜇s to count all the distances.
+
+For more details consult the Jupyter Notebook.
+
+## Problem #4: Searching for Connected Components
+
+### Function: reading_graphs(file)
+#### Input : 
+Gets a string containing the file name.
+#### Output :
+Two lists vert and edges are returned. Vert contains all the nodes of the graph and edges - the edges of the graph.
+#### Description :
+This function constructs an unweighted graph from a file.
+
+### Function: explore(vert,edges,v)
+#### Input : 
+Gets two lists vert and edges, which contain vertexes and edges of the graph, and an integer v which represents the chosen vertex.
+#### Output :
+Nothing is returned as explore is a recursive function, but a list visited is updated. visited[i]=True represents that the vertex i has already been visited. This list helps to avoid looping.
+#### Description :
+A recursive function that itterates along the graph, visits all the vertexes and decides where to go then.
+
+### Function: DFS(vert,edges)
+#### Input : 
+Gets two lists vert and edges, which contain vertees and edges of the graph.
+#### Output :
+Nothing is returned as fuction just calls function explore, which is a recursive function, as mentioned above.
+#### Description :
+A function that calls function explore for all vertexes in the graph.
+
+
+### Function: previsit(v)
+#### Input : 
+Gets an integer v which represents the chosen vertex.
+#### Output :
+Nothing is returned, but a list ccnum is updated. ccnum[i] represents that the vertex i is related to connected component ccnum[i].
+#### Description :
+A recursive function that decides to which connected component the vertex relates.
+
+### Example of working:
+As an input a file with a graph with 12 vertexes and 13 edges is used. First line contain the number of vertexes and edges of the graph.
+As an output we've got the number of a connected component to which the vertex i relates. The running time of the algorithm has been measured: it toke 558 𝜇s identify all the connected components.
+
+For more details consult the Jupyter Notebook.
+
